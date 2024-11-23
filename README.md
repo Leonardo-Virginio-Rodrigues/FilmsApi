@@ -23,6 +23,14 @@ A API foi construída com base em algumas ideias do Gabriel Rangel, cujo tutoria
 - **MongoDB**: Banco de dados NoSQL usado para armazenar os filmes.
 - **Swagger**: Ferramenta para documentar a API de forma interativa.
 
+### Imagem da Estrutura de Dados no Banco
+
+Aqui está uma representação visual dos dados de um filme no banco de dados:
+
+![Estrutura dos Dados no Banco](./src/public/images/imageDB.png)
+
+> **Observação**: A imagem acima mostra a estrutura dos dados de um filme no MongoDB. Você pode visualizar seus dados usando ferramentas como o [MongoDB Compass](https://www.mongodb.com/products/compass) ou executar uma consulta para visualizar os documentos armazenados.
+
 ## Como Rodar
 
 ### Pré-requisitos
