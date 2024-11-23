@@ -1,0 +1,40 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Diretórios e arquivos gerados pelo sistema operacional
+.DS_Store  # Para MacOS
+Thumbs.db  # Para Windows
+
+# Arquivos de log
+logs
+*.log
+*.log.*
+
+# Arquivos de configuração de IDE
+.vscode/
+.idea/
+
+# Dependências de build
+/dist
+/build
+*.tgz
+
+# Arquivos sensíveis (exemplo de arquivo de configuração de ambiente)
+.env
+.env.local
+.env.*.local
+
+# Arquivos de cache
+.cache/
+
+# Diretórios temporários
+tmp/
+temp/
+
+# Arquivos gerados pelo testing
+coverage/
+
+# Arquivos de banco de dados locais
+db.json

@@ -1,0 +1,149 @@
+openapi: 3.0.0
+info:
+  title: API de Filmes
+  description: API para gerenciar filmes
+  version: 1.0.0
+paths:
+  /film:
+    post:
+      summary: Adiciona um novo filme
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: O título do filme
+                description:
+                  type: string
+                  description: A descrição do filme
+                image_url: 
+                  type: string
+                  description: imagme da capa do filme
+                trailer_url:
+                  type: string
+                  description: trailer do filme
+      responses:
+        201:
+          description: Filme criado com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  title:
+                    type: string
+                    description: O título do filme
+                  description:
+                    type: string
+                    description: A descrição do filme
+                  image_url: 
+                    type: string
+                    description: imagme da capa do filme
+                  trailer_url:
+                    type: string
+                    description: trailer do filme
+        400:
+          description: Erro de validação ao adicionar filme
+
+  /films:
+    get:
+      summary: Retorna todos os filmes
+      responses:
+        200:
+          description: Lista de filmes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    title:
+                      type: string
+                      description: O título do filme
+                    description:
+                      type: string
+                      description: A descrição do filme
+                    image_url: 
+                      type: string
+                      description: imagme da capa do filme
+                    trailer_url:
+                      type: string
+                      description: trailer do filme
+        500:
+          description: Erro ao buscar filmes
+
+  /{id}:
+    put:
+      summary: Atualiza um filme específico
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID do filme a ser atualizado
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: O título do filme
+                description:
+                  type: string
+                  description: A descrição do filme
+                image_url: 
+                  type: string
+                  description: imagme da capa do filme
+                trailer_url:
+                  type: string
+                  description: trailer do filme
+      responses:
+        200:
+          description: Filme atualizado com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  title:
+                    type: string
+                    description: O título do filme
+                  description:
+                    type: string
+                    description: A descrição do filme
+                  image_url: 
+                    type: string
+                    description: imagme da capa do filme
+                  trailer_url:
+                    type: string
+                    description: trailer do filme
+        404:
+          description: Filme não encontrado
+        500:
+          description: Erro ao atualizar o filme
+
+    delete:
+      summary: Deleta um filme específico
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID do filme a ser deletado
+          schema:
+            type: string
+      responses:
+        204:
+          description: Filme deletado com sucesso
+        404:
+          description: Filme não encontrado
+        500:
+          description: Erro ao deletar o filme
